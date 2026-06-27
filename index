@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>THP · Grilla de Contenido 2026</title>
+  <meta name="description" content="Calendario editorial conectado a Google Sheets para Trekking House Perú." />
+  <style>
+    :root{
+      --bg:#0b1f16; --panel:#10291d; --panel2:#143322; --card:#f5f3ee; --ink:#f5f3ee; --muted:#bed0c4; --green:#14532D; --green2:#1f6f3c; --amber:#D97706; --red:#c2410c; --line:rgba(245,243,238,.14); --shadow:0 20px 55px rgba(0,0,0,.24); --radius:22px;
+    }
+    *{box-sizing:border-box} body{margin:0;font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(140deg,#06140f 0%,#0b1f16 42%,#12351f 100%);color:var(--ink)}
+    a{color:inherit} button,input,select{font:inherit}.wrap{width:min(1440px,calc(100% - 32px));margin:0 auto}.hero{padding:34px 0 18px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,31,22,.88);backdrop-filter:blur(18px);z-index:50}.hero-row{display:flex;gap:22px;align-items:flex-end;justify-content:space-between}.brand{display:flex;gap:14px;align-items:center}.logo{width:52px;height:52px;border-radius:17px;background:var(--card);display:grid;place-items:center;color:var(--green);font-weight:900;letter-spacing:-1px;box-shadow:var(--shadow)}h1{margin:0;font-size:clamp(24px,3vw,42px);line-height:1.02}.sub{margin:8px 0 0;color:var(--muted);font-size:14px}.actions{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}.btn{border:1px solid var(--line);background:rgba(245,243,238,.08);color:var(--ink);padding:11px 14px;border-radius:14px;cursor:pointer;text-decoration:none;display:inline-flex;gap:8px;align-items:center;white-space:nowrap}.btn.primary{background:var(--amber);border-color:var(--amber);color:#fff;font-weight:800}.btn:hover{filter:brightness(1.05)}
+    .toolbar{padding:18px 0;display:grid;grid-template-columns: 1.1fr .8fr .8fr .8fr;gap:12px}.field{background:rgba(245,243,238,.08);border:1px solid var(--line);border-radius:16px;padding:10px 12px}.field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:5px}.field select,.field input{width:100%;background:transparent;border:0;color:var(--ink);outline:0}.field option{color:#111}.tabs{display:flex;gap:8px;overflow:auto;padding:4px 0 20px}.tab{border:1px solid var(--line);background:rgba(245,243,238,.08);color:var(--ink);padding:10px 13px;border-radius:999px;cursor:pointer;white-space:nowrap}.tab.active{background:var(--card);color:var(--green);font-weight:900;border-color:var(--card)}
+    .status-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:2px 0 18px}.stat{background:rgba(245,243,238,.09);border:1px solid var(--line);border-radius:20px;padding:16px}.stat .k{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}.stat .v{font-size:26px;font-weight:900;margin-top:4px}.layout{display:grid;grid-template-columns: 1.15fr .85fr;gap:18px;align-items:start}.panel{background:rgba(245,243,238,.08);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}.panel-head{padding:18px 18px 12px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px}.panel-head h2{font-size:18px;margin:0}.panel-body{padding:18px}.calendar{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.dow{font-size:11px;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.08em;padding:5px}.day{min-height:118px;background:rgba(245,243,238,.06);border:1px solid var(--line);border-radius:16px;padding:9px;cursor:pointer;position:relative;overflow:hidden}.day.out{opacity:.28}.day.today{outline:2px solid var(--amber)}.day.selected{background:rgba(217,119,6,.18);border-color:rgba(217,119,6,.85)}.date-num{font-weight:900;font-size:14px;margin-bottom:7px}.chips{display:flex;flex-direction:column;gap:5px}.chip{font-size:11px;line-height:1.15;border-radius:9px;padding:5px 6px;background:rgba(245,243,238,.12);border-left:3px solid var(--amber);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.chip.post{border-left-color:#4ade80}.chip.historia{border-left-color:#60a5fa}.chip.carrusel{border-left-color:#f59e0b}.chip.reel{border-left-color:#fb7185}.empty{color:var(--muted);font-size:13px;text-align:center;padding:28px}.daily-list{display:flex;flex-direction:column;gap:12px}.piece{background:var(--card);color:#173524;border-radius:18px;overflow:hidden;border:1px solid rgba(0,0,0,.04)}.piece-img{aspect-ratio:4/5;background:linear-gradient(135deg,#dce9df,#f5f3ee);display:grid;place-items:center;position:relative;color:#6b7f70;text-align:center;padding:18px}.piece-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.badge{position:absolute;top:10px;left:10px;background:rgba(20,83,45,.92);color:#fff;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}.badge.right{left:auto;right:10px}.piece-content{padding:14px}.piece h3{margin:0 0 7px;font-size:16px;line-height:1.15}.meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:9px}.pill{font-size:11px;background:#e4ede6;color:#14532D;border-radius:999px;padding:5px 8px;font-weight:700}.copy{font-size:14px;line-height:1.35;color:#33483b}.small{font-size:12px;color:#667569}.product-link{display:inline-flex;margin-top:10px;background:#14532D;color:#fff;text-decoration:none;border-radius:12px;padding:9px 11px;font-size:12px;font-weight:800}.views{margin-top:18px}.view-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}.view-tab{padding:9px 12px;border-radius:999px;border:1px solid rgba(0,0,0,.1);background:#fff;color:#14532D;cursor:pointer;font-weight:800}.view-tab.active{background:#14532D;color:#fff}.feed{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feed-card{background:var(--card);color:#123;border-radius:16px;overflow:hidden;position:relative;aspect-ratio:1/1}.feed-card img{width:100%;height:100%;object-fit:cover}.feed-placeholder{width:100%;height:100%;display:grid;place-items:center;text-align:center;padding:12px;color:#6b7f70;background:linear-gradient(135deg,#e9efe9,#f5f3ee)}.feed-label{position:absolute;left:7px;right:7px;bottom:7px;background:rgba(11,31,22,.84);color:#fff;border-radius:10px;padding:6px;font-size:10px}.slider{background:var(--card);border-radius:20px;color:#173524;overflow:hidden}.slide-stage{aspect-ratio:4/5;background:#eef4ee;position:relative;display:grid;place-items:center}.slide-stage img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.slide-nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;padding:10px}.arrow{width:42px;height:42px;border:0;border-radius:50%;background:rgba(11,31,22,.78);color:#fff;cursor:pointer;font-size:22px}.dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6)}.dot.active{background:#fff}.slider-info{padding:14px}.table-wrap{overflow:auto;max-height:580px}table{width:100%;border-collapse:collapse;font-size:13px}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}th{position:sticky;top:0;background:#163622;color:#fff;z-index:2}.verify{display:grid;grid-template-columns:1fr 1fr;gap:14px}.check-card{background:rgba(245,243,238,.08);border:1px solid var(--line);border-radius:18px;padding:14px}.check-card h3{margin:0 0 8px}.ok{color:#86efac}.warn{color:#fbbf24}.bad{color:#fb7185}.log{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#07110d;border:1px solid var(--line);border-radius:14px;padding:12px;max-height:360px;overflow:auto;font-size:12px;white-space:pre-wrap}.hidden{display:none!important}.drawer{position:fixed;inset:0;background:rgba(0,0,0,.58);z-index:100;display:none;align-items:stretch;justify-content:flex-end}.drawer.open{display:flex}.drawer-panel{width:min(760px,100%);background:#f5f3ee;color:#153522;height:100%;overflow:auto;padding:24px}.drawer-panel h2{margin-top:0}.drawer textarea{width:100%;min-height:180px;border:1px solid #cad5cd;border-radius:14px;padding:12px}.notice{background:#fff7ed;border:1px solid #fed7aa;color:#7c2d12;border-radius:16px;padding:13px;margin-bottom:12px}.errorbox{background:#fee2e2;border:1px solid #fecaca;color:#7f1d1d;border-radius:16px;padding:13px;margin:14px 0;display:none}.footer{padding:34px 0;color:var(--muted);font-size:12px;text-align:center}@media(max-width:980px){.hero-row,.layout{grid-template-columns:1fr;display:grid}.toolbar{grid-template-columns:1fr 1fr}.status-grid{grid-template-columns:repeat(2,1fr)}.verify{grid-template-columns:1fr}.calendar{gap:5px}.day{min-height:90px;padding:7px}.chip{font-size:10px}.feed{grid-template-columns:repeat(2,1fr)}}@media(max-width:640px){.wrap{width:min(100% - 20px,1440px)}.toolbar{grid-template-columns:1fr}.status-grid{grid-template-columns:1fr}.calendar{grid-template-columns:repeat(7,minmax(42px,1fr))}.day{min-height:74px}.chip{display:none}.panel-body{padding:12px}.feed{grid-template-columns:repeat(1,1fr)}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap hero-row">
+      <div class="brand">
+        <div class="logo">THP</div>
+        <div>
+          <h1>Grilla de Contenido 2026</h1>
+          <p class="sub">Trekking House Perú · Conectado a Google Sheets + imágenes desde Drive</p>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="btnReload">Actualizar data</button>
+        <button class="btn" id="btnVerify">Verificación</button>
+        <a class="btn" href="https://docs.google.com/spreadsheets/d/1ERZPxlESqt8yAUdkg_UcVwQc-VQ9xgkygVnzFUUx-8A/edit?usp=sharing" target="_blank" rel="noopener">Abrir Sheet</a>
+        <button class="btn primary" id="btnManual">Carga manual CSV</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar">
+      <div class="field"><label>Mes</label><select id="monthFilter"></select></div>
+      <div class="field"><label>Formato</label><select id="formatFilter"><option value="">Todos</option></select></div>
+      <div class="field"><label>Estado</label><select id="statusFilter"><option value="">Todos</option></select></div>
+      <div class="field"><label>Buscar</label><input id="searchInput" placeholder="Título, copy, producto..." /></div>
+    </section>
+
+    <section class="tabs" id="monthTabs"></section>
+
+    <section class="status-grid">
+      <div class="stat"><div class="k">Piezas del mes</div><div class="v" id="statTotal">0</div></div>
+      <div class="stat"><div class="k">Carruseles</div><div class="v" id="statCarousel">0</div></div>
+      <div class="stat"><div class="k">Posts</div><div class="v" id="statPosts">0</div></div>
+      <div class="stat"><div class="k">Historias</div><div class="v" id="statStories">0</div></div>
+      <div class="stat"><div class="k">Reels</div><div class="v" id="statReels">0</div></div>
+    </section>
+
+    <section class="errorbox" id="errorBox"></section>
+
+    <section class="layout">
+      <div class="panel">
+        <div class="panel-head"><h2 id="calendarTitle">Calendario</h2><span class="small" id="lastSync">Sin cargar</span></div>
+        <div class="panel-body">
+          <div class="calendar" id="calendar"></div>
+        </div>
+      </div>
+
+      <aside class="panel">
+        <div class="panel-head"><h2 id="dailyTitle">Detalle del día</h2><span class="small" id="dailyCount">0 piezas</span></div>
+        <div class="panel-body"><div class="daily-list" id="dailyList"></div></div>
+      </aside>
+    </section>
+
+    <section class="views panel">
+      <div class="panel-head"><h2>Vista visual del contenido</h2><div class="view-tabs"><button class="view-tab active" data-view="feed">Feed 3 columnas</button><button class="view-tab" data-view="slider">Carrusel visual</button><button class="view-tab" data-view="table">Tabla operativa</button><button class="view-tab" data-view="verify">Verificación</button></div></div>
+      <div class="panel-body">
+        <div id="feedView"><div class="feed" id="feed"></div></div>
+        <div id="sliderView" class="hidden"><div id="sliderHost"></div></div>
+        <div id="tableView" class="hidden"><div class="table-wrap"><table id="contentTable"></table></div></div>
+        <div id="verifyView" class="hidden">
+          <div class="verify">
+            <div class="check-card"><h3>Conexión</h3><div id="connectionCheck"></div></div>
+            <div class="check-card"><h3>Congruencia Sheet / CSV</h3><div id="congruenceCheck"></div></div>
+            <div class="check-card"><h3>Columnas requeridas</h3><div id="columnsCheck"></div></div>
+            <div class="check-card"><h3>Calidad de contenido</h3><div id="qualityCheck"></div></div>
+          </div>
+          <h3>Registro técnico</h3>
+          <div class="log" id="verifyLog"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="drawer" id="manualDrawer">
+    <div class="drawer-panel">
+      <button class="btn" id="closeManual" style="float:right;color:#14532D;border-color:#d6ded8">Cerrar</button>
+      <h2>Carga manual CSV</h2>
+      <div class="notice">Usa esto solo si GitHub Pages no logra leer el CSV por permisos o caché. Copia el contenido CSV de Google Sheets, pégalo aquí y presiona cargar.</div>
+      <textarea id="manualCsv" placeholder="Pega aquí el CSV completo..."></textarea>
+      <div style="margin-top:12px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn primary" id="loadManual">Cargar CSV pegado</button><button class="btn" id="clearManual" style="color:#14532D;border-color:#d6ded8">Limpiar</button></div>
+    </div>
+  </div>
+
+  <footer class="footer">THP · Grilla conectada a Google Sheets. Para publicar en GitHub Pages, sube este archivo como <strong>index.html</strong>.</footer>
+
+<script>
+const CONFIG = {
+  brand: 'Trekking House Perú',
+  sheetUrl: 'https://docs.google.com/spreadsheets/d/1ERZPxlESqt8yAUdkg_UcVwQc-VQ9xgkygVnzFUUx-8A/edit?gid=1394940075#gid=1394940075',
+  csvUrl: 'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4mT-mL0RqI_Mo1aNkpBIsXr_2b1CUFn33KDmuB9Y1xWbuWNfngnGmErfuGjlXlmhGhKh-I9qYZXXH/pub?gid=1394940075&single=true&output=csv',
+  fallbackCsvUrls: [
+    'https://docs.google.com/spreadsheets/d/e/2PACX-1vT4mT-mL0RqI_Mo1aNkpBIsXr_2b1CUFn33KDmuB9Y1xWbuWNfngnGmErfuGjlXlmhGhKh-I9qYZXXH/pub?output=csv',
+    'https://docs.google.com/spreadsheets/d/1ERZPxlESqt8yAUdkg_UcVwQc-VQ9xgkygVnzFUUx-8A/gviz/tq?tqx=out:csv&gid=1394940075'
+  ],
+  expectedGid: '1394940075',
+  expectedJulyRows: 81,
+  months: ['Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'],
+  monthNumbers: {Junio:5, Julio:6, Agosto:7, Septiembre:8, Octubre:9, Noviembre:10, Diciembre:11},
+  year: 2026
+};
+
+let state = { rows: [], headers: [], selectedMonth: 'Julio', selectedDate: null, slideIndex: 0, activeView: 'feed', loadMode:'remote', lastLoad:null, errors:[] };
+const $ = (id)=>document.getElementById(id);
+const norm = (s)=>String(s||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+function get(row, aliases){ const keys = Object.keys(row); for(const alias of aliases){ const a=norm(alias); const k=keys.find(x=>norm(x)===a); if(k) return String(row[k]||'').trim(); } return ''; }
+function wordCount(s){ return String(s||'').trim().split(/\s+/).filter(Boolean).length; }
+function parseDate(str){
+  if(!str) return null;
+  const s=String(str).trim();
+  let d=null;
+  if(/^\d{4}-\d{2}-\d{2}/.test(s)){
+    d=new Date(s.slice(0,10)+'T12:00:00');
+  }else if(/^\d{1,2}\/\d{1,2}\/\d{4}/.test(s)){
+    const parts=s.split(/[\/\s]/); d=new Date(Number(parts[2]),Number(parts[1])-1,Number(parts[0]),12);
+  }else if(/^\d{1,2}\/\d{1,2}$/.test(s)){
+    const parts=s.split('/'); d=new Date(CONFIG.year,Number(parts[1])-1,Number(parts[0]),12);
+  }else{
+    d=new Date(s);
+  }
+  return isNaN(d)?null:d;
+}
+function fmtDate(d){ return d ? d.toISOString().slice(0,10) : ''; }
+function mesFromDate(d){ if(!d) return ''; return CONFIG.months[d.getMonth()-5] || ''; }
+function csvParse(text){
+  const rows=[]; let row=[], field='', i=0, q=false;
+  while(i<text.length){ const c=text[i], n=text[i+1];
+    if(q){ if(c==='"' && n==='"'){field+='"'; i+=2; continue;} if(c==='"'){q=false; i++; continue;} field+=c; i++; continue; }
+    if(c==='"'){q=true; i++; continue;} if(c===','){row.push(field); field=''; i++; continue;} if(c==='\n'){row.push(field); rows.push(row); row=[]; field=''; i++; continue;} if(c==='\r'){i++; continue;} field+=c; i++;
+  }
+  row.push(field); rows.push(row); return rows.filter(r=>r.some(x=>String(x).trim()!==''));
+}
+function rowsToObjects(matrix){ const headers=(matrix[0]||[]).map(h=>String(h||'').trim()); return {headers, rows:matrix.slice(1).map(arr=>{ const o={}; headers.forEach((h,i)=>o[h]=arr[i]||''); return o; }).filter(o=>Object.values(o).some(v=>String(v).trim()))}; }
+function driveImage(url){
+  if(!url) return ''; const u=String(url).trim();
+  let id=''; let m=u.match(/\/file\/d\/([^\/]+)/); if(m) id=m[1];
+  if(!id){ m=u.match(/[?&]id=([^&]+)/); if(m) id=m[1]; }
+  if(!id){ m=u.match(/uc\?export=view&id=([^&]+)/); if(m) id=m[1]; }
+  if(!id && /drive\.google\.com/.test(u)) return u;
+  if(id) return `https://drive.google.com/thumbnail?id=${id}&sz=w1400`;
+  return u;
+}
+function piece(row){
+  const date=parseDate(get(row,['Fecha','Date']));
+  const mes=get(row,['Mes','Month']) || mesFromDate(date);
+  const formato=get(row,['Formato','Format']);
+  const title=get(row,['Título pieza','Titulo pieza','Titulo','Título','Pieza','Nombre pieza']);
+  const copy=get(row,['Copy ≤25 palabras','Copy <=25 palabras','Copy','Texto','Caption']);
+  const links=[]; for(let i=1;i<=10;i++){ const v=get(row,[`Link slide ${i}`,`Slide ${i}`,`Imagen ${i}`,`Link imagen ${i}`]); if(v) links.push(v); }
+  const qty=Number(get(row,['Cantidad slides','Slides','Cantidad de slides'])) || links.length || (formato?1:0);
+  return {
+    raw:row,
+    id:get(row,['ID','Id','Código','Codigo']) || `${mes}-${fmtDate(date)}-${title}`,
+    mes, date, dateKey:fmtDate(date), dia:get(row,['Día','Dia','Day']), semana:get(row,['Semana','Week']), formato, cantidadSlides:qty,
+    categoria:get(row,['Categoría','Categoria']), pilar:get(row,['Pilar contenido','Pilar']), title, objetivo:get(row,['Objetivo']), copy,
+    cta:get(row,['CTA','Cta']), estado:get(row,['Estado']), links, product:get(row,['Link producto','Producto','URL producto']), canal:get(row,['Canal']), responsable:get(row,['Responsable']), prioridad:get(row,['Prioridad']), obs:get(row,['Observaciones','Notas'])
+  };
+}
+function filtered(){ const q=$('searchInput').value.trim().toLowerCase(); const f=$('formatFilter').value; const s=$('statusFilter').value; return state.rows.map(piece).filter(p=>p.mes===state.selectedMonth).filter(p=>!f || p.formato===f).filter(p=>!s || p.estado===s).filter(p=>!q || JSON.stringify(p).toLowerCase().includes(q)); }
+function showError(msg){ const el=$('errorBox'); el.style.display='block'; el.innerHTML=msg; }
+function clearError(){ $('errorBox').style.display='none'; $('errorBox').innerHTML=''; }
+async function loadRemote(){
+  clearError(); state.errors=[];
+  const urls=[CONFIG.csvUrl, ...(CONFIG.fallbackCsvUrls||[])];
+  let lastError=null;
+  for(const sourceUrl of urls){
+    try{
+      const url=sourceUrl + (sourceUrl.includes('?')?'&':'?') + 'cacheBust=' + Date.now();
+      const res=await fetch(url, {cache:'no-store', mode:'cors'});
+      if(!res.ok) throw new Error('HTTP '+res.status+' al leer el CSV');
+      const text=await res.text();
+      if(!text || !text.includes('ID') || !text.includes('Formato')) throw new Error('La respuesta no parece ser CSV de la hoja Contenido.');
+      loadCsv(text, sourceUrl===CONFIG.csvUrl?'csv-publicado':'csv-fallback');
+      return;
+    }catch(e){
+      lastError=e;
+      state.errors.push(sourceUrl+' → '+e.message);
+    }
+  }
+  showError(`<strong>No se pudo leer el CSV publicado.</strong><br>${lastError?lastError.message:'Error desconocido'}<br><br>Verifica que la hoja esté publicada como CSV con gid=${CONFIG.expectedGid}. También puedes usar “Carga manual CSV”.`);
+  renderVerification();
+}
+function loadCsv(text, mode='manual'){
+  const matrix=csvParse(text); const obj=rowsToObjects(matrix);
+  state.headers=obj.headers; state.rows=obj.rows; state.loadMode=mode; state.lastLoad=new Date();
+  const firstMonth=CONFIG.months.find(m=>state.rows.map(piece).some(p=>p.mes===m)) || 'Junio';
+  if(!CONFIG.months.includes(state.selectedMonth) || !state.rows.map(piece).some(p=>p.mes===state.selectedMonth)) state.selectedMonth=firstMonth;
+  populateFilters(); renderAll();
+}
+function populateFilters(){
+  const pieces=state.rows.map(piece); const formats=[...new Set(pieces.map(p=>p.formato).filter(Boolean))].sort(); const statuses=[...new Set(pieces.map(p=>p.estado).filter(Boolean))].sort();
+  $('formatFilter').innerHTML='<option value="">Todos</option>'+formats.map(x=>`<option>${x}</option>`).join('');
+  $('statusFilter').innerHTML='<option value="">Todos</option>'+statuses.map(x=>`<option>${x}</option>`).join('');
+  $('monthFilter').innerHTML=CONFIG.months.map(m=>`<option ${m===state.selectedMonth?'selected':''}>${m}</option>`).join('');
+}
+function renderTabs(){ $('monthTabs').innerHTML=CONFIG.months.map(m=>`<button class="tab ${m===state.selectedMonth?'active':''}" data-month="${m}">${m}</button>`).join(''); document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{state.selectedMonth=b.dataset.month; $('monthFilter').value=state.selectedMonth; state.selectedDate=null; renderAll();}); }
+function renderStats(){
+  const arr=filtered();
+  $('statTotal').textContent=arr.length;
+  $('statCarousel').textContent=arr.filter(p=>/carrusel/i.test(p.formato)).length;
+  $('statPosts').textContent=arr.filter(p=>/post/i.test(p.formato)).length;
+  $('statStories').textContent=arr.filter(p=>/historia|story/i.test(p.formato)).length;
+  if($('statReels')) $('statReels').textContent=arr.filter(p=>/reel/i.test(p.formato)).length;
+}
+function renderCalendar(){
+  const monthIndex=CONFIG.monthNumbers[state.selectedMonth]; const y=CONFIG.year; const first=new Date(y,monthIndex,1); const start=new Date(first); start.setDate(first.getDate()-((first.getDay()+6)%7)); const arr=filtered();
+  $('calendarTitle').textContent=`Calendario · ${state.selectedMonth} ${y}`; $('lastSync').textContent=state.lastLoad?`Última carga: ${state.lastLoad.toLocaleString('es-PE')}`:'Sin cargar';
+  let html=['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'].map(d=>`<div class="dow">${d}</div>`).join('');
+  for(let i=0;i<42;i++){ const d=new Date(start); d.setDate(start.getDate()+i); const key=fmtDate(d); const dayPieces=arr.filter(p=>p.dateKey===key); const out=d.getMonth()!==monthIndex; const selected=state.selectedDate===key; const today=key===fmtDate(new Date());
+    html+=`<div class="day ${out?'out':''} ${selected?'selected':''} ${today?'today':''}" data-date="${key}"><div class="date-num">${d.getDate()}</div><div class="chips">${dayPieces.slice(0,4).map(p=>`<div class="chip ${norm(p.formato)}">${p.formato||'Pieza'} · ${p.title||'Sin título'}</div>`).join('')}${dayPieces.length>4?`<div class="chip">+${dayPieces.length-4} más</div>`:''}</div></div>`;
+  }
+  $('calendar').innerHTML=html; document.querySelectorAll('.day').forEach(d=>d.onclick=()=>{state.selectedDate=d.dataset.date; renderDaily(); renderCalendar();});
+}
+function renderDaily(){
+  const arr=filtered(); if(!state.selectedDate){ const first=arr.find(p=>p.date); state.selectedDate=first?first.dateKey:null; }
+  const dayArr=arr.filter(p=>p.dateKey===state.selectedDate); $('dailyTitle').textContent=state.selectedDate?`Detalle · ${state.selectedDate}`:'Detalle del día'; $('dailyCount').textContent=`${dayArr.length} piezas`;
+  $('dailyList').innerHTML=dayArr.length?dayArr.map(card).join(''):'<div class="empty">No hay piezas programadas para este día.</div>';
+}
+function card(p){ const first=driveImage(p.links[0]); const slides=p.links.length || p.cantidadSlides || 1; return `<article class="piece"><div class="piece-img">${first?`<img src="${first}" loading="lazy" onerror="this.remove()">`:'<div>Sin imagen cargada<br><small>Pega el link en Google Sheets</small></div>'}<span class="badge">${p.formato||'Pieza'}</span><span class="badge right">${slides} slide${slides===1?'':'s'}</span></div><div class="piece-content"><h3>${p.title||'Sin título'}</h3><div class="meta"><span class="pill">${p.estado||'Sin estado'}</span><span class="pill">${p.cta||'Sin CTA'}</span><span class="pill">${p.objetivo||'Sin objetivo'}</span></div><div class="copy">${p.copy||'Sin copy cargado.'}</div>${p.product?`<a class="product-link" href="${p.product}" target="_blank" rel="noopener">Ver producto</a>`:''}</div></article>`; }
+function renderFeed(){ const arr=filtered(); $('feed').innerHTML=arr.length?arr.map(p=>{ const first=driveImage(p.links[0]); return `<div class="feed-card">${first?`<img src="${first}" loading="lazy" onerror="this.outerHTML='<div class=\'feed-placeholder\'>Imagen no disponible</div>'">`:`<div class="feed-placeholder">${p.formato||'Pieza'}<br>${p.title||'Sin título'}</div>`}<div class="feed-label">${p.formato||'Pieza'} · ${(p.links.length||p.cantidadSlides||1)} slide(s)<br>${p.title||''}</div></div>`; }).join(''):'<div class="empty">Sin piezas para mostrar.</div>'; }
+function renderSlider(){ const arr=filtered(); if(!arr.length){ $('sliderHost').innerHTML='<div class="empty">Sin piezas para mostrar.</div>'; return; } const p=arr[state.slideIndex % arr.length]; const imgs=(p.links.length?p.links:['']); let currentSlide=0; function draw(){ const img=driveImage(imgs[currentSlide]); $('sliderHost').innerHTML=`<div class="slider"><div class="slide-stage">${img?`<img src="${img}" onerror="this.remove()">`:'<div>Sin imagen cargada</div>'}<div class="slide-nav"><button class="arrow" id="prevPiece">‹</button><button class="arrow" id="nextPiece">›</button></div><div class="dots">${imgs.map((_,i)=>`<span class="dot ${i===currentSlide?'active':''}"></span>`).join('')}</div><span class="badge">${state.slideIndex+1}/${arr.length} piezas</span><span class="badge right">Slide ${currentSlide+1}/${imgs.length}</span></div><div class="slider-info"><h3>${p.title||'Sin título'}</h3><p class="copy">${p.copy||'Sin copy cargado.'}</p><div class="meta"><span class="pill">${p.dateKey}</span><span class="pill">${p.formato}</span><span class="pill">${p.estado||'Sin estado'}</span></div><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="view-tab" id="prevSlide">Slide anterior</button><button class="view-tab" id="nextSlide">Slide siguiente</button></div></div></div>`; $('prevPiece').onclick=()=>{state.slideIndex=(state.slideIndex-1+arr.length)%arr.length; renderSlider();}; $('nextPiece').onclick=()=>{state.slideIndex=(state.slideIndex+1)%arr.length; renderSlider();}; $('prevSlide').onclick=()=>{currentSlide=(currentSlide-1+imgs.length)%imgs.length; draw();}; $('nextSlide').onclick=()=>{currentSlide=(currentSlide+1)%imgs.length; draw();}; } draw(); }
+function renderTable(){ const arr=filtered(); const cols=['Fecha','Formato','Título','Copy','CTA','Estado','Slides','Links','Producto']; $('contentTable').innerHTML=`<thead><tr>${cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead><tbody>${arr.map(p=>`<tr><td>${p.dateKey}</td><td>${p.formato}</td><td>${p.title}</td><td>${p.copy}<br><span class="small">${wordCount(p.copy)} palabras</span></td><td>${p.cta}</td><td>${p.estado}</td><td>${p.cantidadSlides}</td><td>${p.links.length}</td><td>${p.product?`<a href="${p.product}" target="_blank">Abrir</a>`:''}</td></tr>`).join('')}</tbody>`; }
+function renderVerification(){
+  const pieces=state.rows.map(piece);
+  const julyRows=pieces.filter(p=>p.mes==='Julio').length;
+  const juneRows=pieces.filter(p=>p.mes==='Junio').length;
+  const required=['ID','Mes','Fecha','Formato','Título pieza','Copy','Estado','Link slide 1'];
+  const present=(label)=>state.headers.some(h=>norm(h)===norm(label) || (label==='Copy' && norm(h).includes('copy')) || (label==='Título pieza' && norm(h).includes('titulo')));
+  const missing=required.filter(r=>!present(r));
+  const over25=pieces.filter(p=>wordCount(p.copy)>25);
+  const noTitle=pieces.filter(p=>!p.title);
+  const noDate=pieces.filter(p=>!p.date);
+  const noImg=pieces.filter(p=>p.links.length===0);
+  const hasLinks=pieces.reduce((a,p)=>a+p.links.length,0);
+  const gidOk=CONFIG.csvUrl.includes('gid='+CONFIG.expectedGid);
+  const pubOk=CONFIG.csvUrl.includes('/pub?') && CONFIG.csvUrl.includes('output=csv');
+  const editOk=CONFIG.sheetUrl.includes('/spreadsheets/d/1ERZPxlESqt8yAUdkg_UcVwQc-VQ9xgkygVnzFUUx-8A');
+  $('connectionCheck').innerHTML=`<p class="${state.rows.length?'ok':'bad'}">${state.rows.length?'CSV cargado correctamente':'CSV no cargado'}</p><p>Modo: <strong>${state.loadMode}</strong></p><p>Filas leídas: <strong>${state.rows.length}</strong></p><p>Última carga: <strong>${state.lastLoad?state.lastLoad.toLocaleString('es-PE'):'—'}</strong></p>`;
+  $('congruenceCheck').innerHTML=`<p class="${editOk?'ok':'bad'}">Sheet conectado: ${editOk?'Grilla 1ERZ correcta':'revisar link editable'}</p><p class="${pubOk?'ok':'bad'}">Fuente CSV: ${pubOk?'publicación web CSV correcta':'revisar CSV publicado'}</p><p class="${gidOk?'ok':'warn'}">Pestaña Contenido / GID: ${gidOk?'1394940075 detectado':'no se detecta gid'}</p><p class="${julyRows===CONFIG.expectedJulyRows?'ok':'warn'}">Julio leído: ${julyRows}/${CONFIG.expectedJulyRows} piezas</p><p class="small">Junio leído: ${juneRows} piezas. El HTML filtra por mes desde la hoja Contenido.</p>`;
+  $('columnsCheck').innerHTML=`<p class="${missing.length?'bad':'ok'}">${missing.length?`Faltan o no se detectan: ${missing.join(', ')}`:'Columnas mínimas detectadas'}</p><p>Columnas leídas: <strong>${state.headers.length}</strong></p>`;
+  $('qualityCheck').innerHTML=`<p class="${over25.length?'warn':'ok'}">Copies sobre 25 palabras: <strong>${over25.length}</strong></p><p class="${noImg.length?'warn':'ok'}">Piezas sin imagen: <strong>${noImg.length}</strong></p><p class="${noDate.length?'bad':'ok'}">Piezas sin fecha válida: <strong>${noDate.length}</strong></p><p class="${noTitle.length?'bad':'ok'}">Piezas sin título: <strong>${noTitle.length}</strong></p><p>Links de slide detectados: <strong>${hasLinks}</strong></p>`;
+  const byMonth=CONFIG.months.map(m=>`${m}: ${pieces.filter(p=>p.mes===m).length}`).join('\n');
+  const issues=[...state.errors.map(e=>'ERROR: '+e), ...over25.slice(0,12).map(p=>`Copy >25: ${p.id} · ${wordCount(p.copy)} palabras`), ...noImg.slice(0,12).map(p=>`Sin imagen: ${p.id} · ${p.title}`), ...noDate.slice(0,12).map(p=>`Sin fecha válida: ${p.id} · ${p.title}`)];
+  $('verifyLog').textContent=`Fuente CSV principal:\n${CONFIG.csvUrl}\n\nFuentes fallback:\n${(CONFIG.fallbackCsvUrls||[]).join('\n')}\n\nFuente editable:\n${CONFIG.sheetUrl}\n\nDistribución por mes:\n${byMonth}\n\nObservaciones:\n${issues.length?issues.join('\n'):'Sin observaciones críticas.'}`;
+}
+function renderViews(){ renderFeed(); renderSlider(); renderTable(); renderVerification(); }
+function renderAll(){ renderTabs(); renderStats(); renderCalendar(); renderDaily(); renderViews(); }
+
+$('monthFilter').onchange=e=>{state.selectedMonth=e.target.value; state.selectedDate=null; renderAll();};
+$('formatFilter').onchange=()=>renderAll(); $('statusFilter').onchange=()=>renderAll(); $('searchInput').oninput=()=>renderAll(); $('btnReload').onclick=loadRemote; $('btnVerify').onclick=()=>activateView('verify');
+document.querySelectorAll('.view-tab[data-view]').forEach(b=>b.onclick=()=>activateView(b.dataset.view));
+function activateView(v){ state.activeView=v; document.querySelectorAll('.view-tab[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===v)); ['feed','slider','table','verify'].forEach(name=>$(name+'View').classList.toggle('hidden',name!==v)); if(v==='verify') renderVerification(); }
+$('btnManual').onclick=()=>$('manualDrawer').classList.add('open'); $('closeManual').onclick=()=>$('manualDrawer').classList.remove('open'); $('clearManual').onclick=()=>$('manualCsv').value=''; $('loadManual').onclick=()=>{ const t=$('manualCsv').value.trim(); if(t){ loadCsv(t,'manual'); $('manualDrawer').classList.remove('open'); }};
+loadRemote();
+</script>
+</body>
+</html>
